@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-inter: 'Inter', system-ui, sans-serif;
+    --font-playfair: 'Playfair Display', Georgia, serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-white text-navy-900 font-sans;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-navy-900 tracking-tight;
+  }
+
+  a {
+    @apply transition-colors;
+  }
+}
+
+@layer components {
+  .container-max {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-navy-900 px-6 py-3 text-sm font-semibold text-white shadow-navy transition-all hover:bg-navy-800 hover:shadow-lg active:scale-95;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center rounded-lg bg-gold-500 px-6 py-3 text-sm font-semibold text-navy-900 shadow-gold transition-all hover:bg-gold-600 hover:shadow-gold-lg active:scale-95;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-lg border-2 border-navy-200 bg-white px-6 py-3 text-sm font-semibold text-navy-900 transition-all hover:border-navy-400 hover:bg-navy-50 active:scale-95;
+  }
+
+  .section {
+    @apply py-16 sm:py-24 lg:py-32;
+  }
+
+  .section-title {
+    @apply mb-4 font-display text-4xl font-bold tracking-tight text-navy-900 sm:text-5xl;
+  }
+
+  .section-subtitle {
+    @apply mx-auto max-w-3xl text-lg text-navy-500 sm:text-xl;
+  }
+
+  .eyebrow {
+    @apply mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-gold-600;
+  }
+
+  .card {
+    @apply rounded-2xl border border-navy-100 bg-white p-8 shadow-sm transition-all hover:border-gold-300 hover:shadow-gold;
+  }
+
+  .prose-policy h2 {
+    @apply mt-10 mb-4 text-2xl font-bold text-navy-900;
+  }
+  .prose-policy h3 {
+    @apply mt-6 mb-3 text-xl font-semibold text-navy-800;
+  }
+  .prose-policy p {
+    @apply mb-4 leading-relaxed text-navy-600;
+  }
+  .prose-policy ul {
+    @apply mb-4 ml-6 list-disc space-y-2 text-navy-600;
+  }
+  .prose-policy strong {
+    @apply font-semibold text-navy-900;
+  }
+  .prose-policy a {
+    @apply text-gold-600 underline underline-offset-2 hover:text-gold-700;
+  }
+}

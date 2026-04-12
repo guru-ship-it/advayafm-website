@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+web/node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Next.js
+web/.next/
+web/out/
+
+# Build
+web/build/
+api/build/
+
+# Environment
+.env
+.env.local
+.env.production
+*.env
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Docker
+*.tar
+
+# AWS
+.aws/
