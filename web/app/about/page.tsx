@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description: 'About Advaya FM - Innovating FM Education for India\'s core sectors since 2024.',
+  description: 'About D Advaya FM - Innovating FM Education for India\'s core sectors since 2023.',
 };
 
 export default function AboutPage() {
@@ -14,7 +14,7 @@ export default function AboutPage() {
       <section className="bg-navy-gradient py-20 sm:py-28">
         <div className="container-max">
           <div className="max-w-3xl">
-            <p className="eyebrow text-gold-400">About Advaya FM</p>
+            <p className="eyebrow text-gold-400">About D Advaya FM</p>
             <h1 className="mb-6 font-display text-5xl font-bold text-white sm:text-6xl">
               Innovating FM Education for a <span className="text-gold-400">Rising India</span>
             </h1>
@@ -35,7 +35,7 @@ export default function AboutPage() {
                 <h2 className="mb-4 font-display text-3xl font-bold text-navy-900">Our Story</h2>
                 <p className="mb-4 text-navy-600 leading-relaxed">
                   Founded by professionals with 70+ combined years of experience in offline training programs
-                  across India&apos;s key sectors, Advaya FM bridges the gap between traditional on-ground expertise
+                  across India&apos;s key sectors, D Advaya FM bridges the gap between traditional on-ground expertise
                   and modern AI-driven education technology.
                 </p>
                 <p className="mb-4 text-navy-600 leading-relaxed">
@@ -72,7 +72,7 @@ export default function AboutPage() {
         <div className="container-max">
           <div className="grid gap-8 text-center sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { value: '2024', label: 'Founded' },
+              { value: '2023', label: 'Founded' },
               { value: 'Hyderabad', label: 'Headquarters' },
               { value: '5 Sectors', label: 'Industry Coverage' },
               { value: '95+ Modules', label: 'Training Content' },
@@ -92,13 +92,14 @@ export default function AboutPage() {
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-6 font-display text-3xl font-bold text-navy-900">Company Information</h2>
             <div className="text-navy-600 space-y-2">
-              <p><strong>Legal Name:</strong> Advaya FM Pvt Ltd (D Advaya FM Pvt Ltd)</p>
+              <p><strong>Legal Name:</strong> D Advaya FM Pvt Ltd</p>
               <p><strong>Registered Office:</strong> 502B, Sadhguru Capital Park, Madhapur, Hyderabad, Telangana 500081</p>
-              <p><strong>Founder:</strong> Guru Prasaad</p>
+              <p><strong>Founded:</strong> 2023</p>
               <p><strong>Website:</strong> www.advayafm.com</p>
+              <p><strong>Contact:</strong> admin@advayafm.com | +91 79890 02661</p>
             </div>
             <div className="mt-10 flex items-center justify-center gap-6">
-              <Image src="/logos/advaya-fm.png" alt="Advaya FM" width={80} height={80} className="rounded-full bg-white shadow-gold p-1" />
+              <Image src="/logos/advaya-fm.png" alt="D Advaya FM" width={80} height={80} className="rounded-full bg-white shadow-gold p-1" />
               <Image src="/logos/fm-naipunya.jpg" alt="FM NaipuNya" width={80} height={80} className="rounded-full bg-white shadow-gold p-1" />
             </div>
             <div className="mt-8">

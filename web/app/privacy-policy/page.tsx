@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'Privacy Policy for Advaya FM NaipuNya mobile application and web platform.',
+  description: 'Privacy Policy for D Advaya FM NaipuNya mobile application and web platform.',
 };
 
 export default function PrivacyPolicyPage() {
@@ -15,7 +15,7 @@ export default function PrivacyPolicyPage() {
 
         <h2>1. Introduction</h2>
         <p>
-          Advaya FM Pvt Ltd (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) operates the FM NaipuNya mobile application and web platform (collectively, the &ldquo;Service&rdquo;). We are committed to protecting your privacy in compliance with the <strong>Digital Personal Data Protection (DPDP) Act, 2023</strong> of India and applicable data protection laws.
+          D Advaya FM Pvt Ltd (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) operates the FM NaipuNya mobile application and web platform (collectively, the &ldquo;Service&rdquo;). We are committed to protecting your privacy in compliance with the <strong>Digital Personal Data Protection (DPDP) Act, 2023</strong> of India and applicable data protection laws.
         </p>
         <p>
           This Privacy Policy explains how we collect, use, store, and protect your personal information when you use our Service.
@@ -90,11 +90,9 @@ export default function PrivacyPolicyPage() {
         <h2>10. Contact Us</h2>
         <p>For privacy concerns, data requests, or to exercise your rights under the DPDP Act:</p>
         <ul>
-          <li><strong>Data Protection Officer:</strong> Guru Prasaad</li>
-          <li><strong>Email:</strong> <a href="mailto:privacy@advayafm.com">privacy@advayafm.com</a></li>
-          <li><strong>General Support:</strong> <a href="mailto:support@advayafm.com">support@advayafm.com</a></li>
-          <li><strong>Phone:</strong> +91 81259 91247</li>
-          <li><strong>Address:</strong> Advaya FM Pvt Ltd, 502B Sadhguru Capital Park, Madhapur, Hyderabad, Telangana 500081, India</li>
+          <li><strong>Email:</strong> <a href="mailto:admin@advayafm.com">admin@advayafm.com</a></li>
+          <li><strong>Phone:</strong> +91 79890 02661</li>
+          <li><strong>Address:</strong> D Advaya FM Pvt Ltd, 502B Sadhguru Capital Park, Madhapur, Hyderabad, Telangana 500081, India</li>
         </ul>
       </div>
     </div>

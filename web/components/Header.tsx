@@ -32,7 +32,7 @@ export default function Header() {
           </div>
           <div className="flex flex-col leading-tight">
             <span className="font-display text-lg font-bold text-navy-900">
-              Advaya <span className="text-gold-600">FM</span>
+              D Advaya <span className="text-gold-600">FM</span>
             </span>
             <span className="text-[10px] font-semibold uppercase tracking-widest text-navy-400">
               NaipuNya

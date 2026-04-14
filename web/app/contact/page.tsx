@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
-  description: 'Get in touch with Advaya FM for training solutions, partnerships, or support.',
+  description: 'Get in touch with D Advaya FM for training solutions, partnerships, or support.',
 };
 
 export default function ContactPage() {
@@ -22,20 +22,12 @@ export default function ContactPage() {
           <h2 className="mb-6 font-display text-2xl font-bold text-navy-900">Reach Us Directly</h2>
           <div className="space-y-6">
             <div className="card">
-              <h3 className="mb-1 text-sm font-bold uppercase tracking-wider text-gold-600">Business &amp; Enquiries</h3>
-              <a href="mailto:guru@advayafm.com" className="text-lg font-semibold text-navy-900 hover:text-gold-600">guru@advayafm.com</a>
-            </div>
-            <div className="card">
-              <h3 className="mb-1 text-sm font-bold uppercase tracking-wider text-gold-600">Technical Support</h3>
-              <a href="mailto:support@advayafm.com" className="text-lg font-semibold text-navy-900 hover:text-gold-600">support@advayafm.com</a>
-            </div>
-            <div className="card">
-              <h3 className="mb-1 text-sm font-bold uppercase tracking-wider text-gold-600">Privacy &amp; Data Requests</h3>
-              <a href="mailto:privacy@advayafm.com" className="text-lg font-semibold text-navy-900 hover:text-gold-600">privacy@advayafm.com</a>
+              <h3 className="mb-1 text-sm font-bold uppercase tracking-wider text-gold-600">Business, Support &amp; Enquiries</h3>
+              <a href="mailto:admin@advayafm.com" className="text-lg font-semibold text-navy-900 hover:text-gold-600">admin@advayafm.com</a>
             </div>
             <div className="card">
               <h3 className="mb-1 text-sm font-bold uppercase tracking-wider text-gold-600">Phone</h3>
-              <a href="tel:+918125991247" className="text-lg font-semibold text-navy-900 hover:text-gold-600">+91 81259 91247</a>
+              <a href="tel:+917989002661" className="text-lg font-semibold text-navy-900 hover:text-gold-600">+91 79890 02661</a>
             </div>
             <div className="card">
               <h3 className="mb-1 text-sm font-bold uppercase tracking-wider text-gold-600">Office Address</h3>

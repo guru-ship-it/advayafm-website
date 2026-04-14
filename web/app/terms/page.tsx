@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Terms of Service',
-  description: 'Terms of Service for Advaya FM NaipuNya platform.',
+  description: 'Terms of Service for D Advaya FM NaipuNya platform.',
 };
 
 export default function TermsPage() {
@@ -14,10 +14,10 @@ export default function TermsPage() {
         <p className="mb-10 text-sm text-navy-400">Effective Date: January 26, 2026</p>
 
         <h2>1. Acceptance of Terms</h2>
-        <p>By accessing or using the Advaya FM NaipuNya platform (&ldquo;Service&rdquo;), you agree to be bound by these Terms of Service. If you do not agree, do not use the Service.</p>
+        <p>By accessing or using the D Advaya FM NaipuNya platform (&ldquo;Service&rdquo;), you agree to be bound by these Terms of Service. If you do not agree, do not use the Service.</p>
 
         <h2>2. Description of Service</h2>
-        <p>Advaya FM NaipuNya is an AI-powered training and certification platform for workforce development. The Service includes mobile applications, web platforms, WebXR training simulations, AI-powered assessments, and compliance tracking tools.</p>
+        <p>D Advaya FM NaipuNya is an AI-powered training and certification platform for workforce development. The Service includes mobile applications, web platforms, WebXR training simulations, AI-powered assessments, and compliance tracking tools.</p>
 
         <h2>3. User Accounts</h2>
         <ul>
@@ -38,20 +38,20 @@ export default function TermsPage() {
         </ul>
 
         <h2>5. Intellectual Property</h2>
-        <p>All content, including training modules, WebXR simulations, quiz questions, the Pragati AI coach persona, branding, logos, and software code, is the intellectual property of Advaya FM Pvt Ltd. Unauthorized reproduction, distribution, or modification is strictly prohibited.</p>
+        <p>All content, including training modules, WebXR simulations, quiz questions, the Pragati AI coach persona, branding, logos, and software code, is the intellectual property of D Advaya FM Pvt Ltd. Unauthorized reproduction, distribution, or modification is strictly prohibited.</p>
 
         <h2>6. Training Certification</h2>
         <ul>
           <li>Completion certificates are issued upon successful completion of required modules with passing scores.</li>
           <li>Certificates are issued to the individual who completed the training and are non-transferable.</li>
-          <li>Advaya FM reserves the right to revoke certificates if evidence of fraud or impersonation is found.</li>
+          <li>D Advaya FM reserves the right to revoke certificates if evidence of fraud or impersonation is found.</li>
         </ul>
 
         <h2>7. POSH Reporting</h2>
         <p>The zero-reprisal POSH reporting system is provided in compliance with the Prevention of Sexual Harassment at Workplace Act, 2013. False reports made with malicious intent may result in account suspension and appropriate legal action.</p>
 
         <h2>8. Limitation of Liability</h2>
-        <p>Advaya FM Pvt Ltd provides the Service &ldquo;as is&rdquo; without warranties of any kind. We are not liable for any indirect, incidental, or consequential damages arising from your use of the Service. Our total liability shall not exceed the fees paid by you in the 12 months preceding the claim.</p>
+        <p>D Advaya FM Pvt Ltd provides the Service &ldquo;as is&rdquo; without warranties of any kind. We are not liable for any indirect, incidental, or consequential damages arising from your use of the Service. Our total liability shall not exceed the fees paid by you in the 12 months preceding the claim.</p>
 
         <h2>9. Termination</h2>
         <p>We may suspend or terminate your access to the Service at any time for violation of these Terms or at the request of your employer. You may request account deletion at any time (see <a href="/data-deletion">Data Deletion</a>).</p>
@@ -64,8 +64,9 @@ export default function TermsPage() {
 
         <h2>12. Contact</h2>
         <ul>
-          <li><strong>Email:</strong> <a href="mailto:support@advayafm.com">support@advayafm.com</a></li>
-          <li><strong>Address:</strong> Advaya FM Pvt Ltd, 502B Sadhguru Capital Park, Madhapur, Hyderabad, Telangana 500081</li>
+          <li><strong>Email:</strong> <a href="mailto:admin@advayafm.com">admin@advayafm.com</a></li>
+          <li><strong>Phone:</strong> +91 79890 02661</li>
+          <li><strong>Address:</strong> D Advaya FM Pvt Ltd, 502B Sadhguru Capital Park, Madhapur, Hyderabad, Telangana 500081</li>
         </ul>
       </div>
     </div>

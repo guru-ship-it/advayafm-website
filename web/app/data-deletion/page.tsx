@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Data Deletion',
-  description: 'Request deletion of your personal data from Advaya FM NaipuNya platform.',
+  description: 'Request deletion of your personal data from D Advaya FM NaipuNya platform.',
 };
 
 export default function DataDeletionPage() {
@@ -18,7 +18,7 @@ export default function DataDeletionPage() {
         <p>
           Under the <strong>Digital Personal Data Protection (DPDP) Act, 2023</strong> and
           Google Play Data Safety policies, you have the right to request the permanent
-          deletion of your account and all associated personal data from the Advaya FM
+          deletion of your account and all associated personal data from the D Advaya FM
           NaipuNya platform.
         </p>
 
@@ -28,7 +28,7 @@ export default function DataDeletionPage() {
           <p className="mb-2 text-base font-bold text-navy-900">Send an email to:</p>
           <p className="mb-1">
             <strong>Email:</strong>{' '}
-            <a href="mailto:privacy@advayafm.com" className="text-gold-700 font-semibold">privacy@advayafm.com</a>
+            <a href="mailto:admin@advayafm.com" className="text-gold-700 font-semibold">admin@advayafm.com</a>
           </p>
           <p>
             <strong>Subject line:</strong>{' '}
@@ -96,9 +96,9 @@ export default function DataDeletionPage() {
           For questions about data deletion or to exercise any of your data rights:
         </p>
         <ul>
-          <li><strong>Email:</strong> <a href="mailto:privacy@advayafm.com">privacy@advayafm.com</a></li>
-          <li><strong>Phone:</strong> +91 81259 91247</li>
-          <li><strong>Address:</strong> Advaya FM Pvt Ltd, 502B Sadhguru Capital Park, Madhapur, Hyderabad, Telangana 500081</li>
+          <li><strong>Email:</strong> <a href="mailto:admin@advayafm.com">admin@advayafm.com</a></li>
+          <li><strong>Phone:</strong> +91 79890 02661</li>
+          <li><strong>Address:</strong> D Advaya FM Pvt Ltd, 502B Sadhguru Capital Park, Madhapur, Hyderabad, Telangana 500081</li>
         </ul>
 
         <div className="mt-10 rounded-xl bg-navy-50 p-6 text-center">

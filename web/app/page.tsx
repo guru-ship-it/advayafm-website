@@ -85,13 +85,17 @@ const FEATURES = [
 const PARTNERS = [
   'IHM Hyderabad',
   'Broadcom',
+  'Meta India',
+  'Google India',
   'CBRE',
-  'Meru',
+  'Meru International School',
+  'Move in Sync',
+  'Schneider Electric',
+  'RED.Health',
   'AIC BIMTECH',
   'ALEAP WE-HUB',
   'CII Hyderabad',
-  'Google for Startups',
-  'Schneider Electric',
+  'Google for AI Startups',
 ];
 
 const METRICS = [
@@ -141,7 +145,7 @@ export default function HomePage() {
 
         {/* Logos floating right (desktop) */}
         <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-6 opacity-90">
-          <Image src="/logos/advaya-fm.png" alt="Advaya FM" width={120} height={120} className="rounded-full bg-white/95 p-2 shadow-gold-lg" />
+          <Image src="/logos/advaya-fm.png" alt="D Advaya FM" width={120} height={120} className="rounded-full bg-white/95 p-2 shadow-gold-lg" />
           <Image src="/logos/fm-naipunya.jpg" alt="FM NaipuNya" width={120} height={120} className="rounded-full bg-white/95 p-2 shadow-gold-lg" />
         </div>
 
@@ -159,7 +163,7 @@ export default function HomePage() {
                 Innovating Education for India&apos;s Core Sectors
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-navy-600">
-                Advaya FM, Sanskrit for &lsquo;unique&rsquo;, is an educational technology company
+                D Advaya FM, Sanskrit for &lsquo;unique&rsquo;, is an educational technology company
                 revolutionizing training and certification for India&apos;s most vital industries.
                 We leverage AI-powered assessments, personalized learning paths, and immersive
                 WebXR simulations to empower professionals and drive national growth.
@@ -325,8 +329,8 @@ export default function HomePage() {
             Ready to Transform Your Workforce?
           </h2>
           <p className="mx-auto mb-10 max-w-2xl text-lg text-navy-200">
-            Join Broadcom, CBRE, Meru, and other industry leaders who trust
-            Advaya FM for compliance training and workforce development.
+            Join Broadcom, Meta India, Google India, CBRE, and other industry leaders who trust
+            D Advaya FM for compliance training and workforce development.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link href="/contact" className="btn-gold text-base">

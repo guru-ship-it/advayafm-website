@@ -34,7 +34,7 @@ export default function Footer() {
               <Image src="/logos/fm-naipunya.jpg" alt="FM NaipuNya" width={44} height={44} className="rounded-full bg-white p-1" />
             </div>
             <h3 className="mb-2 font-display text-xl font-bold">
-              Advaya FM <span className="text-gold-400">NaipuNya</span>
+              D Advaya FM <span className="text-gold-400">NaipuNya</span>
             </h3>
             <p className="mb-6 max-w-sm text-sm leading-relaxed text-navy-300">
               Revolutionizing training and certification for India&apos;s most vital industries through AI-powered assessments, immersive WebXR simulations, and personalized learning paths.
@@ -42,15 +42,11 @@ export default function Footer() {
             <div className="space-y-2 text-sm text-navy-300">
               <p>
                 <span className="font-semibold text-gold-400">Email:</span>{' '}
-                <a href="mailto:guru@advayafm.com" className="hover:text-white">guru@advayafm.com</a>
-              </p>
-              <p>
-                <span className="font-semibold text-gold-400">Support:</span>{' '}
-                <a href="mailto:support@advayafm.com" className="hover:text-white">support@advayafm.com</a>
+                <a href="mailto:admin@advayafm.com" className="hover:text-white">admin@advayafm.com</a>
               </p>
               <p>
                 <span className="font-semibold text-gold-400">Phone:</span>{' '}
-                <a href="tel:+918125991247" className="hover:text-white">+91 81259 91247</a>
+                <a href="tel:+917989002661" className="hover:text-white">+91 79890 02661</a>
               </p>
               <p className="pt-1 text-navy-400">
                 502B, Sadhguru Capital Park, Madhapur, Hyderabad, Telangana 500081
@@ -80,7 +76,7 @@ export default function Footer() {
       <div className="border-t border-navy-800">
         <div className="container-max flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
           <p className="text-xs text-navy-400">
-            &copy; {new Date().getFullYear()} Advaya FM Pvt Ltd. All rights reserved. CIN: U74999TG2024PTC185XXX
+            &copy; {new Date().getFullYear()} D Advaya FM Pvt Ltd. All rights reserved. CIN: U74999TG2024PTC185XXX
           </p>
           <p className="text-xs text-navy-500">
             Innovating FM Education &bull; Hyderabad, India

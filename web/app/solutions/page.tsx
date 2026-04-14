@@ -20,7 +20,7 @@ const SECTORS = [
       { level: 'Advanced', count: 4, topics: ['Supervisor Leadership', 'Transport Operations', 'Crisis Management & VIP Protocol', 'MoRTH Compliance & Certification'] },
     ],
     status: '8 modules live, 14 in development',
-    clients: 'Broadcom, Meru, Surya Travels, SGT',
+    clients: 'Broadcom, Meta India, Google India, CBRE, Meru International School',
   },
   {
     id: 'hospitality',
@@ -35,7 +35,8 @@ const SECTORS = [
       { level: 'Advanced', count: 4, topics: ['Supervisory Skills', 'Quality Audits', 'Inventory Management', 'Guest Complaint Handling'] },
     ],
     status: 'In development',
-    clients: 'IHM Hyderabad, CBRE, Meru International School',
+    academicPartner: 'IHM Hyderabad',
+    clients: 'CBRE, Meru International School, Meta India, Google India',
   },
   {
     id: 'facilities',
@@ -50,7 +51,7 @@ const SECTORS = [
       { level: 'Advanced', count: 10, topics: ['Facility Planning', 'Vendor Management', 'Budget & Cost Control', 'Compliance Auditing', 'Space Management', 'Sustainability', 'BMS Operations', 'SLA Management', 'Crisis Response', 'Team Leadership'] },
     ],
     status: 'Planned for Q3 2026',
-    clients: 'CBRE, Schneider Electric',
+    clients: 'CBRE, Schneider Electric, Meta India, Google India',
   },
   {
     id: 'logistics',
@@ -113,6 +114,9 @@ export default function SolutionsPage() {
               <p className="mt-2 text-sm text-navy-400"><strong>Target audience:</strong> {sector.target}</p>
               <div className="mt-4 flex flex-wrap gap-3">
                 <span className="rounded-full bg-gold-100 px-4 py-1.5 text-xs font-bold text-gold-800">{sector.status}</span>
+                {sector.academicPartner && (
+                  <span className="rounded-full bg-blue-100 px-4 py-1.5 text-xs font-semibold text-blue-800">Academic Partner: {sector.academicPartner}</span>
+                )}
                 <span className="rounded-full bg-navy-100 px-4 py-1.5 text-xs font-semibold text-navy-700">Clients: {sector.clients}</span>
               </div>
             </div>
