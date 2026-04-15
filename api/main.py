@@ -1,5 +1,5 @@
-"""Advaya FM NaipuNya - Unified API Backend
-Deployed on AWS App Runner. Serves the Flutter mobile app.
+"""D Advaya FM NaipuNya - Unified API Backend
+Deployed on AWS App Runner. Serves the Flutter mobile app + website.
 """
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -8,10 +8,12 @@ from typing import Optional
 import uuid
 from datetime import datetime
 
+from routers import pragati
+
 app = FastAPI(
-    title="Advaya FM NaipuNya API",
-    version="1.0.0",
-    description="Backend API for the FM NaipuNya training platform",
+    title="D Advaya FM NaipuNya API",
+    version="1.1.0",
+    description="Backend API for the FM NaipuNya training platform with Pragati AI coach",
 )
 
 app.add_middleware(
@@ -22,12 +24,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Mount Pragati AI router
+app.include_router(pragati.router)
+
 
 # ============ Health Check ============
 
 @app.get("/health")
 def health():
-    return {"status": "healthy", "service": "advaya-fm-api", "version": "1.0.0"}
+    return {"status": "healthy", "service": "d-advaya-fm-api", "version": "1.1.0", "pragati": "enabled"}
 
 
 # ============ Translation ============
