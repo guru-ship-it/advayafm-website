@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: '%s | D Advaya FM NaipuNya',
   },
   description:
-    'Revolutionizing training and certification for India\'s vital industries through AI-powered assessments, immersive WebXR simulations, and personalized learning paths. Trusted by Meta India, Google India, CBRE, and leading institutions.',
+    'Revolutionizing training and certification for India\'s vital industries through AI-powered assessments, immersive WebXR simulations, and personalized learning paths. Trusted by leading institutions including the Ministry of Skill Development & Entrepreneurship.',
   keywords: [
     'FM training',
     'facility management training India',

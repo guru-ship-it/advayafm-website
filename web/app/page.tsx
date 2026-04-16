@@ -83,11 +83,10 @@ const FEATURES = [
 ];
 
 const PARTNERS = [
+  'Ministry of Skill Development & Entrepreneurship',
   'IHM Hyderabad',
-  'Broadcom',
   'Meta India',
   'Google India',
-  'CBRE',
   'Meru International School',
   'Move in Sync',
   'Schneider Electric',
@@ -120,7 +119,7 @@ export default function HomePage() {
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-navy-200 sm:text-xl">
               Immersive WebXR training platform for blue-collar and white-collar professionals.
               MoRTH aligned. NSDC certified. DPDP compliant.
-              Trusted by Broadcom, CBRE, and leading institutions.
+              Trusted by leading institutions including the Ministry of Skill Development &amp; Entrepreneurship.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link href="/contact" className="btn-gold text-base">
@@ -329,7 +328,7 @@ export default function HomePage() {
             Ready to Transform Your Workforce?
           </h2>
           <p className="mx-auto mb-10 max-w-2xl text-lg text-navy-200">
-            Join Broadcom, Meta India, Google India, CBRE, and other industry leaders who trust
+            Join leading institutions and enterprises who trust
             D Advaya FM for compliance training and workforce development.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
