@@ -1,0 +1,65 @@
+{
+  "name": "D Advaya FM NaipuNya",
+  "short_name": "Advaya FM",
+  "description": "AI-Powered Training for India's Workforce — Drivers, Housekeeping, Facility Management",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0A1628",
+  "theme_color": "#D4AF37",
+  "lang": "en-IN",
+  "dir": "ltr",
+  "categories": ["education", "business", "productivity"],
+  "icons": [
+    {
+      "src": "/logos/fm-naipunya.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "/logos/fm-naipunya.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/logos/advaya-fm.png",
+      "sizes": "4500x4500",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Solutions",
+      "short_name": "Solutions",
+      "description": "Browse our training sectors",
+      "url": "/solutions",
+      "icons": [{ "src": "/logos/fm-naipunya.jpg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Download App",
+      "short_name": "App",
+      "description": "Get the mobile training app",
+      "url": "/download",
+      "icons": [{ "src": "/logos/fm-naipunya.jpg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Get in touch with D Advaya FM",
+      "url": "/contact",
+      "icons": [{ "src": "/logos/fm-naipunya.jpg", "sizes": "192x192" }]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=in.advayafm.training",
+      "id": "in.advayafm.training"
+    }
+  ],
+  "prefer_related_applications": false
+}

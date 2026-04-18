@@ -4,6 +4,7 @@ import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PragatiChat from '@/components/PragatiChat';
+import PWAInstaller from '@/components/PWAInstaller';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -75,8 +76,24 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: '/logos/advaya-fm.png',
-    apple: '/logos/advaya-fm.png',
+    apple: '/logos/fm-naipunya.jpg',
   },
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    title: 'D Advaya FM',
+    statusBarStyle: 'black-translucent',
+  },
+  other: {
+    'mobile-web-app-capable': 'yes',
+    'application-name': 'D Advaya FM NaipuNya',
+  },
+};
+
+export const viewport = {
+  themeColor: '#D4AF37',
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -91,6 +108,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <PragatiChat />
+        <PWAInstaller />
       </body>
     </html>
   );
