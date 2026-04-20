@@ -3,6 +3,28 @@ import { NextRequest, NextResponse } from 'next/server';
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
+// CORS: the Flutter WebView serves the app from file:// (origin = "null").
+// We allow any origin on the auth endpoints so the installed app can fetch.
+// The OTP flow is self-protecting (rate limits, static reviewer bypass,
+// 5-attempt lockout on verify) so wildcard CORS is acceptable here.
+const CORS_HEADERS: Record<string, string> = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+  'Access-Control-Max-Age': '86400',
+};
+
+function withCors<T>(body: T, init?: ResponseInit) {
+  return NextResponse.json(body, {
+    ...(init ?? {}),
+    headers: { ...(init?.headers ?? {}), ...CORS_HEADERS },
+  });
+}
+
+export async function OPTIONS() {
+  return new NextResponse(null, { status: 204, headers: CORS_HEADERS });
+}
+
 const MSG91_AUTH_KEY = process.env.MSG91_AUTH_KEY || '';
 const MSG91_TEMPLATE_ID = process.env.MSG91_TEMPLATE_ID || '';
 const MSG91_SENDER_ID = process.env.MSG91_SENDER_ID || 'ADVAFM';
@@ -60,12 +82,12 @@ export async function POST(req: NextRequest) {
     const { phone } = await req.json();
 
     if (!phone || typeof phone !== 'string') {
-      return NextResponse.json({ error: 'phone is required' }, { status: 400 });
+      return withCors({ error: 'phone is required' }, { status: 400 });
     }
 
     const normalizedPhone = normalizePhone(phone);
     if (normalizedPhone.length !== 12) {
-      return NextResponse.json(
+      return withCors(
         { error: 'Invalid phone number. Use Indian 10-digit number.' },
         { status: 400 }
       );
@@ -76,7 +98,7 @@ export async function POST(req: NextRequest) {
     // OTP and return success without calling MSG91.
     if (normalizedPhone === REVIEWER_PHONE_E164) {
       if (!noteReviewerHit()) {
-        return NextResponse.json(
+        return withCors(
           { error: 'Reviewer daily quota exceeded.' },
           { status: 429 }
         );
@@ -86,7 +108,7 @@ export async function POST(req: NextRequest) {
         expires: Date.now() + OTP_EXPIRY_MINUTES * 60 * 1000,
         attempts: 0,
       });
-      return NextResponse.json({
+      return withCors({
         success: true,
         message: 'OTP sent.',
         expires_in_minutes: OTP_EXPIRY_MINUTES,
@@ -96,7 +118,7 @@ export async function POST(req: NextRequest) {
     // Rate limit: don't send OTP more than once per 30 sec to same number
     const existing = otpStore.get(normalizedPhone);
     if (existing && existing.expires - Date.now() > (OTP_EXPIRY_MINUTES - 0.5) * 60 * 1000) {
-      return NextResponse.json(
+      return withCors(
         { error: 'OTP already sent. Please wait before requesting again.' },
         { status: 429 }
       );
@@ -113,7 +135,7 @@ export async function POST(req: NextRequest) {
     if (!MSG91_AUTH_KEY) {
       // Dev mode - just log it
       console.log(`[DEV] OTP for ${normalizedPhone}: ${otp}`);
-      return NextResponse.json({
+      return withCors({
         success: true,
         message: 'OTP sent (DEV mode - check server logs)',
         dev_otp: otp, // ONLY in dev when no key
@@ -141,19 +163,19 @@ export async function POST(req: NextRequest) {
 
     if (!msg91Response.ok || msg91Data.type === 'error') {
       console.error('MSG91 error:', msg91Data);
-      return NextResponse.json(
+      return withCors(
         { error: 'Failed to send OTP. Please try again.', detail: msg91Data?.message },
         { status: 502 }
       );
     }
 
-    return NextResponse.json({
+    return withCors({
       success: true,
       message: `OTP sent to +${normalizedPhone}`,
       expires_in_minutes: OTP_EXPIRY_MINUTES,
     });
   } catch (err: any) {
     console.error('Send OTP error:', err);
-    return NextResponse.json({ error: 'Internal error', detail: err?.message }, { status: 500 });
+    return withCors({ error: 'Internal error', detail: err?.message }, { status: 500 });
   }
 }

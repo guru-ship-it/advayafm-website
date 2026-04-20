@@ -63,12 +63,31 @@ YOUR PERSONA (Pragati/Didi):
 
 type ChatMessage = { role: 'user' | 'assistant'; content: string };
 
+// CORS: allow Flutter WebView (file:// origin = "null") to call this endpoint.
+const CORS_HEADERS: Record<string, string> = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+  'Access-Control-Max-Age': '86400',
+};
+
+function withCors<T>(body: T, init?: ResponseInit) {
+  return NextResponse.json(body, {
+    ...(init ?? {}),
+    headers: { ...(init?.headers ?? {}), ...CORS_HEADERS },
+  });
+}
+
+export async function OPTIONS() {
+  return new NextResponse(null, { status: 204, headers: CORS_HEADERS });
+}
+
 export async function POST(req: NextRequest) {
   try {
     const { message, history = [], language = 'English' } = await req.json();
 
     if (!message || typeof message !== 'string') {
-      return NextResponse.json({ error: 'message is required' }, { status: 400 });
+      return withCors({ error: 'message is required' }, { status: 400 });
     }
 
     let system = SYSTEM_PROMPT;
@@ -110,7 +129,7 @@ export async function POST(req: NextRequest) {
       body?.content?.[0]?.text ||
       'Maaf kijiye, main abhi jawab nahi de paa rahi. Please try again.';
 
-    return NextResponse.json({
+    return withCors({
       reply,
       language,
       tokens_in: body?.usage?.input_tokens || 0,
@@ -118,7 +137,7 @@ export async function POST(req: NextRequest) {
     });
   } catch (err: any) {
     console.error('Pragati error:', err);
-    return NextResponse.json(
+    return withCors(
       { error: 'Pragati is temporarily unavailable', detail: err?.message },
       { status: 500 }
     );

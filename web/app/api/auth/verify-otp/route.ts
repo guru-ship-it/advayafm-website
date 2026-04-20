@@ -8,6 +8,25 @@ const SESSION_SECRET = process.env.SESSION_SECRET || 'advaya-fm-default-dev-secr
 const MAX_ATTEMPTS = 5;
 const REVIEWER_PHONE_E164 = '919999999999'; // Play Store reviewer bypass phone
 
+// CORS: allow Flutter WebView (file:// origin = "null") to call this endpoint.
+const CORS_HEADERS: Record<string, string> = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+  'Access-Control-Max-Age': '86400',
+};
+
+function withCors<T>(body: T, init?: ResponseInit) {
+  return NextResponse.json(body, {
+    ...(init ?? {}),
+    headers: { ...(init?.headers ?? {}), ...CORS_HEADERS },
+  });
+}
+
+export async function OPTIONS() {
+  return new NextResponse(null, { status: 204, headers: CORS_HEADERS });
+}
+
 declare global {
   // eslint-disable-next-line no-var
   var __otpStore: Map<string, { otp: string; expires: number; attempts: number }> | undefined;
@@ -36,14 +55,14 @@ export async function POST(req: NextRequest) {
     const { phone, otp } = await req.json();
 
     if (!phone || !otp) {
-      return NextResponse.json({ error: 'phone and otp required' }, { status: 400 });
+      return withCors({ error: 'phone and otp required' }, { status: 400 });
     }
 
     const normalizedPhone = normalizePhone(phone);
     const stored = otpStore.get(normalizedPhone);
 
     if (!stored) {
-      return NextResponse.json(
+      return withCors(
         { error: 'No OTP found. Please request a new OTP.' },
         { status: 404 }
       );
@@ -51,7 +70,7 @@ export async function POST(req: NextRequest) {
 
     if (Date.now() > stored.expires) {
       otpStore.delete(normalizedPhone);
-      return NextResponse.json(
+      return withCors(
         { error: 'OTP expired. Please request a new OTP.' },
         { status: 410 }
       );
@@ -59,7 +78,7 @@ export async function POST(req: NextRequest) {
 
     if (stored.attempts >= MAX_ATTEMPTS) {
       otpStore.delete(normalizedPhone);
-      return NextResponse.json(
+      return withCors(
         { error: 'Too many attempts. Please request a new OTP.' },
         { status: 429 }
       );
@@ -69,7 +88,7 @@ export async function POST(req: NextRequest) {
 
     if (String(otp).trim() !== stored.otp) {
       const remaining = MAX_ATTEMPTS - stored.attempts;
-      return NextResponse.json(
+      return withCors(
         { error: `Invalid OTP. ${remaining} attempt(s) remaining.` },
         { status: 401 }
       );
@@ -83,7 +102,7 @@ export async function POST(req: NextRequest) {
       console.log('[REVIEWER-BYPASS] verification succeeded for reviewer account');
     }
 
-    return NextResponse.json({
+    return withCors({
       success: true,
       token,
       phone: normalizedPhone,
@@ -92,6 +111,6 @@ export async function POST(req: NextRequest) {
     });
   } catch (err: any) {
     console.error('Verify OTP error:', err);
-    return NextResponse.json({ error: 'Internal error', detail: err?.message }, { status: 500 });
+    return withCors({ error: 'Internal error', detail: err?.message }, { status: 500 });
   }
 }
