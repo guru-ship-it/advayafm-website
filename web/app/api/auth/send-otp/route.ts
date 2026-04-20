@@ -9,6 +9,27 @@ const MSG91_SENDER_ID = process.env.MSG91_SENDER_ID || 'ADVAFM';
 const OTP_LENGTH = 6;
 const OTP_EXPIRY_MINUTES = 5;
 
+// Play Store / App Store reviewer bypass.
+// This single hardcoded phone+OTP combo lets Google/Apple reviewers access
+// the app without receiving a real SMS. Rate-limited and logged. Never
+// advertise this number; it exists only for store-review access.
+const REVIEWER_PHONE_E164 = '919999999999'; // +91 99999 99999
+const REVIEWER_STATIC_OTP = '123456';
+const REVIEWER_DAILY_LIMIT = 20;
+declare global {
+  // eslint-disable-next-line no-var
+  var __reviewerHits: { date: string; count: number } | undefined;
+}
+function noteReviewerHit(): boolean {
+  const today = new Date().toISOString().slice(0, 10);
+  const tracker = globalThis.__reviewerHits || { date: today, count: 0 };
+  if (tracker.date !== today) { tracker.date = today; tracker.count = 0; }
+  tracker.count++;
+  globalThis.__reviewerHits = tracker;
+  console.log(`[REVIEWER-BYPASS] hit ${tracker.count}/${REVIEWER_DAILY_LIMIT} on ${today}`);
+  return tracker.count <= REVIEWER_DAILY_LIMIT;
+}
+
 // In-memory OTP store (production: use Redis or DynamoDB)
 // For now: simple in-process map (resets on App Runner restart)
 declare global {
@@ -48,6 +69,28 @@ export async function POST(req: NextRequest) {
         { error: 'Invalid phone number. Use Indian 10-digit number.' },
         { status: 400 }
       );
+    }
+
+    // Reviewer bypass: Google Play Store / App Store reviewers use this
+    // phone number to access the app without a real SMS. Store the static
+    // OTP and return success without calling MSG91.
+    if (normalizedPhone === REVIEWER_PHONE_E164) {
+      if (!noteReviewerHit()) {
+        return NextResponse.json(
+          { error: 'Reviewer daily quota exceeded.' },
+          { status: 429 }
+        );
+      }
+      otpStore.set(normalizedPhone, {
+        otp: REVIEWER_STATIC_OTP,
+        expires: Date.now() + OTP_EXPIRY_MINUTES * 60 * 1000,
+        attempts: 0,
+      });
+      return NextResponse.json({
+        success: true,
+        message: 'OTP sent.',
+        expires_in_minutes: OTP_EXPIRY_MINUTES,
+      });
     }
 
     // Rate limit: don't send OTP more than once per 30 sec to same number

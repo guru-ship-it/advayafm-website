@@ -6,6 +6,7 @@ export const dynamic = 'force-dynamic';
 
 const SESSION_SECRET = process.env.SESSION_SECRET || 'advaya-fm-default-dev-secret-change-in-prod';
 const MAX_ATTEMPTS = 5;
+const REVIEWER_PHONE_E164 = '919999999999'; // Play Store reviewer bypass phone
 
 declare global {
   // eslint-disable-next-line no-var
@@ -77,6 +78,10 @@ export async function POST(req: NextRequest) {
     // Success - clear OTP and issue session token
     otpStore.delete(normalizedPhone);
     const token = createSessionToken(normalizedPhone);
+
+    if (normalizedPhone === REVIEWER_PHONE_E164) {
+      console.log('[REVIEWER-BYPASS] verification succeeded for reviewer account');
+    }
 
     return NextResponse.json({
       success: true,
