@@ -7,6 +7,7 @@ import { useState } from 'react';
 const NAV_LINKS = [
   { href: '/about', label: 'About' },
   { href: '/solutions', label: 'Solutions' },
+  { href: 'https://training.advayafm.com', label: 'Training' },
   { href: '/partners', label: 'Partners' },
   { href: '/download', label: 'Download App' },
   { href: '/contact', label: 'Contact' },

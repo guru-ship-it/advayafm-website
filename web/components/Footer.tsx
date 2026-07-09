@@ -11,6 +11,7 @@ const FOOTER_LINKS = {
   ],
   Platform: [
     { href: '/about', label: 'About Us' },
+    { href: 'https://training.advayafm.com', label: 'Training Platform' },
     { href: '/partners', label: 'Partners' },
     { href: '/download', label: 'Download App' },
     { href: '/contact', label: 'Contact Us' },

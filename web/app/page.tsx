@@ -117,12 +117,15 @@ export default function HomePage() {
               <span className="bg-gold-gradient bg-clip-text text-transparent">India&apos;s Workforce</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-navy-200 sm:text-xl">
-              Immersive WebXR training platform for blue-collar and white-collar professionals.
+              Interactive training platform for blue-collar and white-collar professionals — WebXR coming soon.
               MoRTH aligned. NSDC certified. DPDP compliant.
               Trusted by leading institutions including the Ministry of Skill Development &amp; Entrepreneurship.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Link href="/contact" className="btn-gold text-base">
+              <Link href="https://training.advayafm.com" className="btn-gold text-base">
+                ▶ Watch Our Training Demo
+              </Link>
+              <Link href="/contact" className="btn-outline border-navy-600 bg-transparent text-white hover:border-gold-400 hover:bg-navy-800/50 text-base">
                 Request a Demo
               </Link>
               <Link href="/solutions" className="btn-outline border-navy-600 bg-transparent text-white hover:border-gold-400 hover:bg-navy-800/50 text-base">
