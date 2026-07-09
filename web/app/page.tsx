@@ -5,7 +5,7 @@ const SECTORS = [
   {
     name: 'Ground Transport',
     icon: '🚛',
-    description: 'MoRTH-aligned driver training with defensive driving, POSH, and emergency response modules. Immersive WebXR simulations for hazard detection.',
+    description: 'MoRTH-aligned driver training with defensive driving, POSH, and emergency response modules. Interactive hazard-detection exercises on real road photography.',
     modules: '22 modules',
     status: '8 live, 14 in development',
     highlights: ['MoRTH-Mandated Curriculum', 'Defensive Driving (3 levels)', 'Vehicle Inspection Rituals', 'First Aid & Emergency Response'],
@@ -53,7 +53,7 @@ const FEATURES = [
   {
     icon: '🧠',
     title: 'AI-Powered Assessments',
-    description: 'Multilingual MCQ assessments that adapt to the learner\'s proficiency. Powered by Google Gemini for real-time evaluation.',
+    description: 'Multilingual MCQ assessments that adapt to the learner\'s proficiency, with instant scoring and feedback.',
   },
   {
     icon: '🎯',
@@ -62,8 +62,8 @@ const FEATURES = [
   },
   {
     icon: '🥽',
-    title: 'Immersive WebXR Simulations',
-    description: 'A-Frame powered 3D simulations for hazard detection, vehicle inspection, emergency response, and workplace scenarios.',
+    title: 'WebXR Simulations — Coming Soon',
+    description: '3D simulations for hazard detection, vehicle inspection, emergency response, and workplace scenarios are in development.',
   },
   {
     icon: '🗣️',
@@ -89,12 +89,8 @@ const PARTNERS = [
   'Google India',
   'Meru International School',
   'Move in Sync',
-  'Schneider Electric',
   'RED.Health',
-  'AIC BIMTECH',
-  'ALEAP WE-HUB',
   'CII Hyderabad',
-  'Google for AI Startups',
 ];
 
 const METRICS = [
@@ -167,13 +163,12 @@ export default function HomePage() {
               <p className="mt-4 text-lg leading-relaxed text-navy-600">
                 D Advaya FM, Sanskrit for &lsquo;unique&rsquo;, is an educational technology company
                 revolutionizing training and certification for India&apos;s most vital industries.
-                We leverage AI-powered assessments, personalized learning paths, and immersive
-                WebXR simulations to empower professionals and drive national growth.
+                We leverage AI-powered assessments, personalized learning paths, and interactive
+                mobile-first training to empower professionals and drive national growth.
               </p>
               <p className="mt-4 text-base text-navy-500">
-                We collaborate with prestigious institutions like IHM Hyderabad, and are incubated
-                at AIC BIMTECH and ALEAP WE-HUB. Our on-ground experience of 70+ years in offline
-                training now powers our AI-driven platform.
+                We collaborate with prestigious institutions like IHM Hyderabad. Our on-ground
+                experience of 70+ years in offline training now powers our AI-driven platform.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-6">
@@ -338,8 +333,8 @@ export default function HomePage() {
             <Link href="/contact" className="btn-gold text-base">
               Request a Demo
             </Link>
-            <Link href="/download" className="btn-outline border-navy-600 bg-transparent text-white hover:border-gold-400 hover:bg-navy-800/50 text-base">
-              Download the App
+            <Link href="https://training.advayafm.com" className="btn-outline border-navy-600 bg-transparent text-white hover:border-gold-400 hover:bg-navy-800/50 text-base">
+              Try the Training Platform
             </Link>
           </div>
         </div>

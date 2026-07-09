@@ -44,8 +44,7 @@ export default function AboutPage() {
                   training accessible, multilingual, and mobile-first.
                 </p>
                 <p className="text-navy-600 leading-relaxed">
-                  Incubated at AIC BIMTECH and ALEAP WE-HUB, and selected for the Google for AI Startups program,
-                  we are building India&apos;s most comprehensive workforce skilling platform.
+                  We are building India&apos;s most comprehensive workforce skilling platform.
                 </p>
               </div>
               <div className="space-y-6">
@@ -59,7 +58,7 @@ export default function AboutPage() {
                 </div>
                 <div className="card bg-navy-50 border-none">
                   <h3 className="mb-2 font-display text-lg font-bold text-navy-900">Our Approach</h3>
-                  <p className="text-sm text-navy-600">AI-powered assessments, immersive WebXR simulations, Pragati AI coach, and NSDC/MoRTH-aligned curriculum delivered via a mobile-first platform.</p>
+                  <p className="text-sm text-navy-600">AI-powered assessments, interactive mobile training (WebXR simulations in development), Pragati AI coach, and NSDC/MoRTH-aligned curriculum delivered via a mobile-first platform.</p>
                 </div>
               </div>
             </div>

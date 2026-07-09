@@ -13,7 +13,6 @@ const FOOTER_LINKS = {
     { href: '/about', label: 'About Us' },
     { href: 'https://training.advayafm.com', label: 'Training Platform' },
     { href: '/partners', label: 'Partners' },
-    { href: '/download', label: 'Download App' },
     { href: '/contact', label: 'Contact Us' },
   ],
   Legal: [
@@ -38,7 +37,7 @@ export default function Footer() {
               D Advaya FM <span className="text-gold-400">NaipuNya</span>
             </h3>
             <p className="mb-6 max-w-sm text-sm leading-relaxed text-navy-300">
-              Revolutionizing training and certification for India&apos;s most vital industries through AI-powered assessments, immersive WebXR simulations, and personalized learning paths.
+              Revolutionizing training and certification for India&apos;s most vital industries through AI-powered assessments, interactive mobile training, and personalized learning paths.
             </p>
             <div className="space-y-2 text-sm text-navy-300">
               <p>
@@ -77,7 +76,7 @@ export default function Footer() {
       <div className="border-t border-navy-800">
         <div className="container-max flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
           <p className="text-xs text-navy-400">
-            &copy; {new Date().getFullYear()} D Advaya FM Pvt Ltd. All rights reserved. CIN: U74999TG2024PTC185XXX
+            &copy; {new Date().getFullYear()} D Advaya FM Pvt Ltd. All rights reserved.
           </p>
           <p className="text-xs text-navy-500">
             Innovating FM Education &bull; Hyderabad, India

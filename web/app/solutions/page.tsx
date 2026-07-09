@@ -20,7 +20,6 @@ const SECTORS = [
       { level: 'Advanced', count: 4, topics: ['Supervisor Leadership', 'Transport Operations', 'Crisis Management & VIP Protocol', 'MoRTH Compliance & Certification'] },
     ],
     status: '8 modules live, 14 in development',
-    clients: 'Broadcom, Meta India, Google India, CBRE, Meru International School',
   },
   {
     id: 'hospitality',
@@ -36,7 +35,6 @@ const SECTORS = [
     ],
     status: 'In development',
     academicPartner: 'IHM Hyderabad',
-    clients: 'CBRE, Meru International School, Meta India, Google India',
   },
   {
     id: 'facilities',
@@ -51,7 +49,6 @@ const SECTORS = [
       { level: 'Advanced', count: 10, topics: ['Facility Planning', 'Vendor Management', 'Budget & Cost Control', 'Compliance Auditing', 'Space Management', 'Sustainability', 'BMS Operations', 'SLA Management', 'Crisis Response', 'Team Leadership'] },
     ],
     status: 'Planned for Q3 2026',
-    clients: 'CBRE, Schneider Electric, Meta India, Google India',
   },
   {
     id: 'logistics',
@@ -66,7 +63,6 @@ const SECTORS = [
       { level: 'Advanced', count: 4, topics: ['Supply Chain Analytics', 'Vendor Relations', 'Regulatory Compliance', 'Operations Leadership'] },
     ],
     status: 'Planned for Q4 2026',
-    clients: 'Move in Sync',
   },
   {
     id: 'msme',
@@ -81,7 +77,6 @@ const SECTORS = [
       { level: 'Advanced', count: 4, topics: ['Business Strategy', 'Regulatory Compliance', 'Scaling Operations', 'Leadership Development'] },
     ],
     status: 'Planned for 2027',
-    clients: 'ALEAP WE-HUB cohort',
   },
 ];
 
@@ -117,7 +112,9 @@ export default function SolutionsPage() {
                 {sector.academicPartner && (
                   <span className="rounded-full bg-blue-100 px-4 py-1.5 text-xs font-semibold text-blue-800">Academic Partner: {sector.academicPartner}</span>
                 )}
-                <span className="rounded-full bg-navy-100 px-4 py-1.5 text-xs font-semibold text-navy-700">Clients: {sector.clients}</span>
+                {/* Clients tags removed 2026-07-10 (honest-labels audit): only tag a company
+                    under a vertical where that specific training was actually delivered.
+                    Restore per-vertical only with founder-confirmed delivered scope. */}
               </div>
             </div>
 

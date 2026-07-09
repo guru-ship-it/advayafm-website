@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: '%s | D Advaya FM NaipuNya',
   },
   description:
-    'Revolutionizing training and certification for India\'s vital industries through AI-powered assessments, immersive WebXR simulations, and personalized learning paths. Trusted by leading institutions including the Ministry of Skill Development & Entrepreneurship.',
+    'Revolutionizing training and certification for India\'s vital industries through AI-powered assessments, interactive mobile training, and personalized learning paths. Trusted by leading institutions including the Ministry of Skill Development & Entrepreneurship.',
   keywords: [
     'FM training',
     'facility management training India',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     siteName: 'D Advaya FM NaipuNya',
     title: 'D Advaya FM NaipuNya | AI-Powered Training for India\'s Workforce',
     description:
-      'Immersive WebXR training for drivers, housekeeping, security, and facility management professionals. MoRTH and NSDC aligned curriculum.',
+      'Interactive mobile training for drivers, housekeeping, security, and facility management professionals. MoRTH and NSDC aligned curriculum.',
     images: [
       {
         url: '/logos/advaya-fm.png',

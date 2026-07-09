@@ -13,14 +13,13 @@ ABOUT D ADVAYA FM:
 - Founded 2023 in Hyderabad, India
 - Registered legal name: D Advaya FM Pvt Ltd
 - Mission: AI-powered training for India's blue-collar workforce (drivers, housekeeping, security, facility management)
-- Key clients: Meta India, Google India Hyderabad, CBRE, Meru International School, Move in Sync, Schneider Electric
+- Client: Move in Sync (transport/logistics training integration)
+- Training deployments and pilots delivered at: Meta India Hyderabad, Google India Hyderabad, Broadcom Hyderabad, CBRE
 - Academic partner: IHM Hyderabad (for Hospitality training)
 - First Aid Training Partner: RED.Health (content aligned with St. John Ambulance per Govt Guidelines)
-- Incubated at: AIC BIMTECH, ALEAP WE-HUB Cohort 5.0
-- Selected for: Google for AI Startups Program
 
 CURRENT TRAINING PROGRAM (Ground Transport - Live Now):
-- 8 modules for corporate drivers, each 30 minutes (Story + Theory + WebXR Simulation + Quiz)
+- 8 modules for corporate drivers, each 30 minutes (Story + Theory + Interactive Exercises + Quiz)
 - M1: Foundations & Grooming — Professional appearance, hygiene, uniform, cockpit check
 - M2: Digital Navigation — App usage, routing, trip documentation
 - M3: Elite Conduct & POSH — Professional silence, zero-reprisal harassment reporting
@@ -45,8 +44,8 @@ EXPANSION PLANS:
 - Total roadmap: 95+ training modules across 5 sectors
 
 INNOVATION:
-- First in India to use WebXR simulations on mobile for blue-collar training
-- First AI coach (Pragati) with trilingual narration in Hindi/English/Telugu
+- WebXR simulations on mobile for blue-collar training are in development (coming soon)
+- AI coach (Pragati) with trilingual narration in Hindi/English/Telugu
 - NSDC + MoRTH aligned curriculum with government-certified content
 - 70+ years combined offline training experience digitized
 
