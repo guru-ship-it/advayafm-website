@@ -85,18 +85,19 @@ const FEATURES = [
 const PARTNERS = [
   'Ministry of Skill Development & Entrepreneurship',
   'IHM Hyderabad',
-  'Meta India',
-  'Google India',
   'Meru International School',
   'Move in Sync',
+  'Schneider Electric',
   'RED.Health',
+  'AIC BIMTECH',
+  'ALEAP WE-HUB',
   'CII Hyderabad',
 ];
 
 const METRICS = [
-  { value: '95+', label: 'Training Modules' },
+  { value: '8', label: 'Modules Live Today' },
+  { value: '95+', label: 'Modules In Build' },
   { value: '5', label: 'Industry Sectors' },
-  { value: '8', label: 'MNC Partnerships' },
   { value: '70+', label: 'Years Combined Expertise' },
 ];
 
@@ -167,8 +168,9 @@ export default function HomePage() {
                 mobile-first training to empower professionals and drive national growth.
               </p>
               <p className="mt-4 text-base text-navy-500">
-                We collaborate with prestigious institutions like IHM Hyderabad. Our on-ground
-                experience of 70+ years in offline training now powers our AI-driven platform.
+                We collaborate with prestigious institutions like IHM Hyderabad, and are incubated
+                at AIC BIMTECH and ALEAP WE-HUB. Our on-ground experience of 70+ years in offline
+                training now powers our AI-driven platform.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-6">

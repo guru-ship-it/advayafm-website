@@ -44,7 +44,8 @@ export default function AboutPage() {
                   training accessible, multilingual, and mobile-first.
                 </p>
                 <p className="text-navy-600 leading-relaxed">
-                  We are building India&apos;s most comprehensive workforce skilling platform.
+                  Incubated at AIC BIMTECH and ALEAP WE-HUB (Cohort 5.0), we are building
+                  India&apos;s most comprehensive workforce skilling platform.
                 </p>
               </div>
               <div className="space-y-6">

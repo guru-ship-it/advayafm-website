@@ -6,20 +6,21 @@ export const metadata: Metadata = {
   description: 'D Advaya FM partnerships with IHM Hyderabad, RED.Health, Move in Sync, and leading institutions.',
 };
 
-// Honest-labels rule (2026-07-10): a card's type must match what was actually
-// delivered. "Enterprise Client" = active, ongoing commercial relationship only.
-// Cards on hold pending founder confirmation (do NOT restore without it):
-//   AIC BIMTECH (incubation status), ALEAP WE-HUB (cohort wording),
-//   Schneider Electric + Meru International (delivered scope unconfirmed).
-// Deleted permanently: "Google for AI Startups" (application was declined; never selected).
+// Honest-labels rule (2026-07-10, founder-confirmed): a card's type must match
+// what was actually delivered. "Enterprise Client" = active, ongoing commercial
+// relationship only. Deleted permanently: "Google for AI Startups" (application
+// was declined; never selected). Google India + Meta India removed on founder's
+// instruction 2026-07-10.
 const PARTNERS = [
   { name: 'IHM Hyderabad', type: 'Academic Partner', description: 'Co-developed hospitality curriculum blending academic rigor with AI-driven training technology.' },
   { name: 'Move in Sync', type: 'Enterprise Client', description: 'Transport and logistics training integration for corporate mobility platform.' },
   { name: 'RED.Health', type: 'First Aid Training Partner', description: 'Official partnership for First Aid and Emergency Response training certification. RED.Health delivers accredited first aid content aligned with St. John Ambulance guidelines per Government of India regulations.' },
   { name: 'Broadcom', type: 'Pilot Deployment', description: 'Pilot deployment of Ground Transport training for corporate fleet drivers at Broadcom Hyderabad campus.' },
-  { name: 'Meta India', type: 'Training Deployment', description: 'Corporate workforce training delivered at Meta India Hyderabad campus.' },
-  { name: 'Google India Pvt Ltd', type: 'Training Deployment', description: 'Training program delivered at Google India Hyderabad campus for fleet and facility staff.' },
   { name: 'CBRE', type: 'Training Engagement', description: 'Facility management training engagement for corporate housekeeping and maintenance staff.' },
+  { name: 'Schneider Electric', type: 'Offline Training Delivered', description: 'On-site workforce training delivered covering electrical safety and facility compliance.' },
+  { name: 'Meru International School Hyderabad', type: 'Offline Training Delivered', description: 'On-site driver and campus operations training delivered for school transport staff.' },
+  { name: 'AIC BIMTECH', type: 'Incubator', description: 'Incubated at Atal Incubation Centre, BIMTECH for startup development and mentorship.' },
+  { name: 'ALEAP WE-HUB', type: 'Incubator', description: 'Part of ALEAP WE-HUB Cohort 5.0 supporting women-led and innovative enterprises.' },
   { name: 'CII Hyderabad', type: 'Industry Network', description: 'Member of Confederation of Indian Industry Hyderabad chapter for industry connections.' },
 ];
 

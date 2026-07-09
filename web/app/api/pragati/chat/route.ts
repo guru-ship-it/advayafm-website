@@ -14,9 +14,12 @@ ABOUT D ADVAYA FM:
 - Registered legal name: D Advaya FM Pvt Ltd
 - Mission: AI-powered training for India's blue-collar workforce (drivers, housekeeping, security, facility management)
 - Client: Move in Sync (transport/logistics training integration)
-- Training deployments and pilots delivered at: Meta India Hyderabad, Google India Hyderabad, Broadcom Hyderabad, CBRE
+- Pilot and training engagements: Broadcom Hyderabad (pilot), CBRE
+- Offline training delivered on site: Schneider Electric, Meru International School Hyderabad
 - Academic partner: IHM Hyderabad (for Hospitality training)
 - First Aid Training Partner: RED.Health (content aligned with St. John Ambulance per Govt Guidelines)
+- Incubated at: AIC BIMTECH, ALEAP WE-HUB Cohort 5.0
+- Only Ground Transport modules (8) are live today; all other sectors and modules are in build (coming soon) — never claim otherwise
 
 CURRENT TRAINING PROGRAM (Ground Transport - Live Now):
 - 8 modules for corporate drivers, each 30 minutes (Story + Theory + Interactive Exercises + Quiz)
