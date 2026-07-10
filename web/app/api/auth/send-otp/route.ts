@@ -1,7 +1,34 @@
 import { NextRequest, NextResponse } from 'next/server';
+import crypto from 'crypto';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
+
+// Per-IP rate limit (audit): stop anonymous SMS-bombing / MSG91 credit drain.
+// In-memory (single App Runner instance); resets on restart.
+declare global {
+  // eslint-disable-next-line no-var
+  var __sendOtpRl: Map<string, { count: number; windowStart: number }> | undefined;
+}
+const _rl: Map<string, { count: number; windowStart: number }> =
+  globalThis.__sendOtpRl || (globalThis.__sendOtpRl = new Map());
+function clientIp(req: NextRequest): string {
+  const xff = (req.headers.get('x-forwarded-for') || '').trim();
+  if (xff) return xff.split(',').pop()!.trim().slice(0, 64); // rightmost = App Runner envoy peer
+  return 'unknown';
+}
+function ipRateLimited(ip: string, limit = 10, windowMs = 60_000): boolean {
+  const now = Date.now();
+  const rec = _rl.get(ip);
+  if (!rec || now - rec.windowStart > windowMs) {
+    _rl.set(ip, { count: 1, windowStart: now });
+    if (_rl.size > 10_000) for (const [k, v] of _rl) if (now - v.windowStart > windowMs) _rl.delete(k);
+    return false;
+  }
+  if (rec.count >= limit) return true;
+  rec.count++;
+  return false;
+}
 
 // CORS: the Flutter WebView serves the app from file:// (origin = "null").
 // We allow any origin on the auth endpoints so the installed app can fetch.
@@ -31,12 +58,12 @@ const MSG91_SENDER_ID = process.env.MSG91_SENDER_ID || 'ADVAFM';
 const OTP_LENGTH = 6;
 const OTP_EXPIRY_MINUTES = 5;
 
-// Play Store / App Store reviewer bypass.
-// This single hardcoded phone+OTP combo lets Google/Apple reviewers access
-// the app without receiving a real SMS. Rate-limited and logged. Never
-// advertise this number; it exists only for store-review access.
-const REVIEWER_PHONE_E164 = '919999999999'; // +91 99999 99999
-const REVIEWER_STATIC_OTP = '123456';
+// Play Store / App Store reviewer bypass — audit: moved OUT of source into env
+// vars (the repo is public; a hardcoded phone+OTP was a login backdoor). The
+// bypass is ACTIVE only when BOTH env vars are set; otherwise it does not exist.
+const REVIEWER_PHONE_E164 = process.env.REVIEWER_BYPASS_PHONE || ''; // e.g. 919XXXXXXXXX
+const REVIEWER_STATIC_OTP = process.env.REVIEWER_BYPASS_OTP || '';
+const REVIEWER_BYPASS_ENABLED = REVIEWER_PHONE_E164.length === 12 && REVIEWER_STATIC_OTP.length >= 6;
 const REVIEWER_DAILY_LIMIT = 20;
 declare global {
   // eslint-disable-next-line no-var
@@ -72,13 +99,19 @@ function normalizePhone(phone: string): string {
 }
 
 function generateOtp(): string {
+  // audit: cryptographic RNG (was Math.random — predictable)
   let otp = '';
-  for (let i = 0; i < OTP_LENGTH; i++) otp += Math.floor(Math.random() * 10);
+  for (let i = 0; i < OTP_LENGTH; i++) otp += crypto.randomInt(0, 10);
   return otp;
 }
 
 export async function POST(req: NextRequest) {
   try {
+    // audit: per-IP throttle before any work (SMS-bomb / credit-drain guard)
+    if (ipRateLimited(clientIp(req))) {
+      return withCors({ error: 'Too many requests. Please wait a minute.' }, { status: 429 });
+    }
+
     const { phone } = await req.json();
 
     if (!phone || typeof phone !== 'string') {
@@ -96,7 +129,7 @@ export async function POST(req: NextRequest) {
     // Reviewer bypass: Google Play Store / App Store reviewers use this
     // phone number to access the app without a real SMS. Store the static
     // OTP and return success without calling MSG91.
-    if (normalizedPhone === REVIEWER_PHONE_E164) {
+    if (REVIEWER_BYPASS_ENABLED && normalizedPhone === REVIEWER_PHONE_E164) {
       if (!noteReviewerHit()) {
         return withCors(
           { error: 'Reviewer daily quota exceeded.' },
@@ -133,12 +166,17 @@ export async function POST(req: NextRequest) {
 
     // Send via MSG91
     if (!MSG91_AUTH_KEY) {
-      // Dev mode - just log it
+      // audit: NEVER hand the OTP back in production. Only expose dev_otp when
+      // explicitly NOT in production; in prod a missing key is a 503, not a giveaway.
+      if (process.env.NODE_ENV === 'production') {
+        console.error('[SEND-OTP] MSG91_AUTH_KEY missing in production — refusing to issue OTP');
+        return withCors({ error: 'OTP service temporarily unavailable.' }, { status: 503 });
+      }
       console.log(`[DEV] OTP for ${normalizedPhone}: ${otp}`);
       return withCors({
         success: true,
         message: 'OTP sent (DEV mode - check server logs)',
-        dev_otp: otp, // ONLY in dev when no key
+        dev_otp: otp, // dev only — never reachable in production
       });
     }
 

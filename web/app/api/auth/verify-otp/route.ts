@@ -4,9 +4,11 @@ import crypto from 'crypto';
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-const SESSION_SECRET = process.env.SESSION_SECRET || 'advaya-fm-default-dev-secret-change-in-prod';
+// audit: fail closed — no public fallback secret (the repo is public; a default
+// signing key let anyone forge a 30-day session for any phone). Require the env var.
+const SESSION_SECRET = process.env.SESSION_SECRET || '';
 const MAX_ATTEMPTS = 5;
-const REVIEWER_PHONE_E164 = '919999999999'; // Play Store reviewer bypass phone
+const REVIEWER_PHONE_E164 = process.env.REVIEWER_BYPASS_PHONE || ''; // env-driven (was hardcoded)
 
 // CORS: allow Flutter WebView (file:// origin = "null") to call this endpoint.
 const CORS_HEADERS: Record<string, string> = {
@@ -52,6 +54,12 @@ function createSessionToken(phone: string): string {
 
 export async function POST(req: NextRequest) {
   try {
+    // audit: refuse to run without a real signing secret (no forgeable tokens)
+    if (!SESSION_SECRET) {
+      console.error('[VERIFY-OTP] SESSION_SECRET unset — refusing to issue tokens');
+      return withCors({ error: 'Auth service temporarily unavailable.' }, { status: 503 });
+    }
+
     const { phone, otp } = await req.json();
 
     if (!phone || !otp) {

@@ -4,6 +4,29 @@ import { BedrockRuntimeClient, InvokeModelCommand } from '@aws-sdk/client-bedroc
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
+// Per-IP rate limit (audit): this endpoint invokes paid Bedrock with no login,
+// so it was an unbounded-cost / free-LLM-proxy vector. Throttle per client.
+declare global {
+  // eslint-disable-next-line no-var
+  var __pragatiRl: Map<string, { count: number; windowStart: number }> | undefined;
+}
+const _pragatiRl: Map<string, { count: number; windowStart: number }> =
+  globalThis.__pragatiRl || (globalThis.__pragatiRl = new Map());
+function _chatRateLimited(req: NextRequest, limit = 15, windowMs = 60_000): boolean {
+  const xff = (req.headers.get('x-forwarded-for') || '').trim();
+  const ip = (xff ? xff.split(',').pop()!.trim() : 'unknown').slice(0, 64);
+  const now = Date.now();
+  const rec = _pragatiRl.get(ip);
+  if (!rec || now - rec.windowStart > windowMs) {
+    _pragatiRl.set(ip, { count: 1, windowStart: now });
+    if (_pragatiRl.size > 10_000) for (const [k, v] of _pragatiRl) if (now - v.windowStart > windowMs) _pragatiRl.delete(k);
+    return false;
+  }
+  if (rec.count >= limit) return true;
+  rec.count++;
+  return false;
+}
+
 const BEDROCK_REGION = process.env.BEDROCK_REGION || 'ap-south-1';
 const MODEL_ID = process.env.PRAGATI_MODEL_ID || 'apac.anthropic.claude-3-5-sonnet-20240620-v1:0';
 
@@ -86,10 +109,19 @@ export async function OPTIONS() {
 
 export async function POST(req: NextRequest) {
   try {
+    if (_chatRateLimited(req)) {
+      return withCors({ error: 'Please slow down and try again in a moment.' }, { status: 429 });
+    }
+
     const { message, history = [], language = 'English' } = await req.json();
 
     if (!message || typeof message !== 'string') {
       return withCors({ error: 'message is required' }, { status: 400 });
+    }
+
+    // audit: hard cap message length to bound token cost / prompt-abuse
+    if (message.length > 2000) {
+      return withCors({ error: 'Message too long.' }, { status: 400 });
     }
 
     let system = SYSTEM_PROMPT;
