@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { href: '/about', label: 'About' },
   { href: '/solutions', label: 'Solutions' },
   { href: 'https://training.advayafm.com', label: 'Training' },
+  { href: 'https://training.advayafm.com/console', label: 'Console' },
   { href: '/partners', label: 'Partners' },
   { href: '/contact', label: 'Contact' },
 ];
