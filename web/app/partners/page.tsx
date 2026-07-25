@@ -9,9 +9,13 @@ export const metadata: Metadata = {
 // Honest-labels rule (2026-07-10, founder-confirmed): a card's type must match
 // what was actually delivered. "Enterprise Client" = active, ongoing commercial
 // relationship only. Deleted permanently: "Google for AI Startups" (application
-// was declined; never selected). Google India + Meta India removed on founder's
-// instruction 2026-07-10.
+// was declined; never selected).
+// Google + Meta RESTORED 2026-07-25 on founder's instruction as "Offline Training
+// Delivered" - both engagements delivered personally by the founder; founder holds
+// emails and invoices as documentation.
 const PARTNERS = [
+  { name: 'Google Hyderabad', type: 'Offline Training Delivered', description: 'On-campus transport and driver training delivered across multiple consecutive quarters, renewed on performance.' },
+  { name: 'Meta India', type: 'Offline Training Delivered', description: 'On-site workforce training delivered for facility and transport teams.' },
   { name: 'IHM Hyderabad', type: 'Academic Partner', description: 'Co-developed hospitality curriculum blending academic rigor with AI-driven training technology.' },
   { name: 'Move in Sync', type: 'Enterprise Client', description: 'Transport and logistics training integration for corporate mobility platform.' },
   { name: 'RED.Health', type: 'First Aid Training Partner', description: 'Official partnership for First Aid and Emergency Response training certification. RED.Health delivers accredited first aid content aligned with St. John Ambulance guidelines per Government of India regulations.' },

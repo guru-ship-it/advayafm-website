@@ -84,6 +84,8 @@ const FEATURES = [
 
 const PARTNERS = [
   'Ministry of Skill Development & Entrepreneurship',
+  'Google Hyderabad',
+  'Meta India',
   'IHM Hyderabad',
   'Meru International School',
   'Move in Sync',
