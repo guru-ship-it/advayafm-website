@@ -86,6 +86,8 @@ const PARTNERS = [
   'Ministry of Skill Development & Entrepreneurship',
   'Google Hyderabad',
   'Meta India',
+  'Carelon Global Solutions',
+  'R1 RCM',
   'IHM Hyderabad',
   'Meru International School',
   'Move in Sync',

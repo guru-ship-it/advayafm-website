@@ -38,7 +38,7 @@ ABOUT D ADVAYA FM:
 - Mission: AI-powered training for India's blue-collar workforce (drivers, housekeeping, security, facility management)
 - Client: Move in Sync (transport/logistics training integration)
 - Pilot and training engagements: Broadcom Hyderabad (pilot), CBRE
-- Offline training delivered on site: Google Hyderabad (transport and driver training, multiple consecutive quarters), Meta India, Schneider Electric, Meru International School Hyderabad
+- Offline training delivered on site: Google Hyderabad (transport and driver training, multiple consecutive quarters), Meta India, Carelon Global Solutions, R1 RCM, Schneider Electric, Meru International School Hyderabad
 - Academic partner: IHM Hyderabad (for Hospitality training)
 - First Aid Training Partner: RED.Health (content aligned with St. John Ambulance per Govt Guidelines)
 - Incubated at: AIC BIMTECH, ALEAP WE-HUB Cohort 5.0

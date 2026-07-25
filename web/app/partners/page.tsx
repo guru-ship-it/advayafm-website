@@ -16,6 +16,8 @@ export const metadata: Metadata = {
 const PARTNERS = [
   { name: 'Google Hyderabad', type: 'Offline Training Delivered', description: 'On-campus transport and driver training delivered across multiple consecutive quarters, renewed on performance.' },
   { name: 'Meta India', type: 'Offline Training Delivered', description: 'On-site workforce training delivered for facility and transport teams.' },
+  { name: 'Carelon Global Solutions', type: 'Offline Training Delivered', description: 'On-site workforce training delivered for corporate teams.' },
+  { name: 'R1 RCM', type: 'Offline Training Delivered', description: 'On-site driver and transport training delivered for corporate fleet staff.' },
   { name: 'IHM Hyderabad', type: 'Academic Partner', description: 'Co-developed hospitality curriculum blending academic rigor with AI-driven training technology.' },
   { name: 'Move in Sync', type: 'Enterprise Client', description: 'Transport and logistics training integration for corporate mobility platform.' },
   { name: 'RED.Health', type: 'First Aid Training Partner', description: 'Official partnership for First Aid and Emergency Response training certification. RED.Health delivers accredited first aid content aligned with St. John Ambulance guidelines per Government of India regulations.' },
