@@ -5,11 +5,11 @@ const SECTORS = [
   {
     name: 'Ground Transport',
     icon: '🚛',
-    description: 'MoRTH-aligned driver training with defensive driving, POSH, and emergency response modules. Interactive hazard-detection exercises on real road photography.',
+    description: 'MoRTH-aligned driver training plus the new Executive and Senior Executive tiers — rosters, routes, night-shift compliance, incidents and vendor governance.',
     modules: '22 modules',
-    status: '8 live, 14 in development',
-    highlights: ['MoRTH-Mandated Curriculum', 'Defensive Driving (3 levels)', 'Vehicle Inspection Rituals', 'First Aid & Emergency Response'],
-    href: '/solutions#ground-transport',
+    status: 'All 22 live — driver, executive & senior executive',
+    highlights: ['MoRTH-Referenced Curriculum', 'Transport Executive Tier — NEW', 'Senior Executive Tier — NEW', 'First Aid & Emergency Response'],
+    href: '/transport-executive',
   },
   {
     name: 'Hospitality',
@@ -99,8 +99,8 @@ const PARTNERS = [
 ];
 
 const METRICS = [
-  { value: '8', label: 'Modules Live Today' },
-  { value: '95+', label: 'Modules In Build' },
+  { value: '50', label: 'Modules Live Today' },
+  { value: '3', label: 'Languages per Module' },
   { value: '5', label: 'Industry Sectors' },
   { value: '70+', label: 'Years Combined Expertise' },
 ];
@@ -108,6 +108,14 @@ const METRICS = [
 export default function HomePage() {
   return (
     <>
+      {/* Campaign strip */}
+      <Link
+        href="/transport-executive"
+        className="block bg-gold-500 px-4 py-2.5 text-center text-sm font-bold text-navy-900 transition-colors hover:bg-gold-600"
+      >
+        NEW — Transport Executive programme · 6 courses · access from ₹199 per learner/month →
+      </Link>
+
       {/* Hero */}
       <section className="relative overflow-hidden bg-navy-gradient py-20 sm:py-28 lg:py-36">
         <div className="container-max relative z-10">
@@ -119,7 +127,7 @@ export default function HomePage() {
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-navy-200 sm:text-xl">
               Interactive training platform for blue-collar and white-collar professionals — WebXR coming soon.
-              MoRTH aligned. NSDC certified. DPDP compliant.
+              MoRTH aligned. NSQF-referenced. DPDP compliant.
               Trusted by leading institutions including the Ministry of Skill Development &amp; Entrepreneurship.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
