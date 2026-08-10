@@ -7,72 +7,72 @@ const COURSES = [
     tab: 'The Executive',
     n: '01',
     title: 'The Transport Executive',
-    spine: 'You are not dispatching cabs — you are accountable for people who cannot see the risk you manage for them.',
+    spine: 'You are not just sending cabs. People’s safety depends on your decisions.',
     bullets: [
-      'The roster as a legal record: written consent and rotation for women on night shifts',
-      'Route approval that software cannot do: no woman first picked up or last dropped alone',
-      'The control room and the panic alert: who you call in the first ninety seconds — and why it is never the driver first',
-      'POSH in the cab: what you record, what you act on, and what you never circulate',
+      'Night shift rules: written consent and duty rotation for women staff',
+      'Routes: no lady staff should be picked up first or dropped last, alone with the driver',
+      'Panic alert: whom to call first in the first two minutes — and why it is never the driver',
+      'Complaint about a driver: what to write down, what to do at once, what to keep private',
     ],
   },
   {
     tab: 'Driver & Vehicle',
     n: '02',
     title: 'Before The Cab Rolls',
-    spine: 'A document you did not check is a document you accepted.',
+    spine: 'A paper you did not check is a paper you accepted.',
     bullets: [
-      'Licence class and badge: why a valid licence can still be the wrong one',
-      'Permit, fitness, insurance and PUC — what each proves and when each silently lapses',
-      'The weekly expiry board that turns 6 pm surprises into routine renewals',
-      'The substitution at the gate: stopping the unverified stand-in driver at nine at night',
+      'Driving licence and badge: valid is not enough — it must be the right type',
+      'Permit, fitness, insurance and PUC: what each paper means and when each one expires',
+      'One simple expiry sheet, read once a week — no more 6 pm surprises',
+      'Stopping a substitute driver at the gate at night, politely but firmly',
     ],
   },
   {
     tab: 'Night Shift',
     n: '03',
     title: 'The Night Shift File',
-    spine: 'The exemption belongs to the company. The conditions belong to you.',
+    spine: 'The permission belongs to the company. Keeping it belongs to you.',
     bullets: [
-      'Why one missing consent letter puts night working for the whole site at risk',
-      'The five records: consent register, rotation, route approvals, escort log, control room log',
-      'Surviving an inspection: the vertical slice through one ordinary night',
-      'Contemporaneous logs: why the messy original beats a neat rewrite every time',
+      'One missing consent letter can stop night work for the whole site',
+      'The five registers: consent, rotation, route approval, escort and control room log',
+      'What an inspector asks for, and in what order — so you are ready before he comes',
+      'Why the original log book matters more than a neat rewritten copy',
     ],
   },
   {
-    tab: 'Incidents',
+    tab: 'Accidents',
     n: '04',
     title: 'When It Goes Wrong On The Road',
     spine: 'You cannot control the accident. You control the ninety minutes after it.',
     bullets: [
-      'The four facts before any other question — and calling 108 yourself',
-      'Duties at the scene: stop, secure, get the injured to treatment, never leave',
-      'Nobody goes to hospital alone, and the family hears from a person, not a forward',
-      'Evidence with a shelf life: tracker export, photographs, statements and the insurer clock',
+      'The four facts to collect on the first call — then dial 108 yourself',
+      'At the spot: stop, make the area safe, get the injured to hospital, never leave',
+      'Nobody goes to hospital alone, and the family hears it from a person, not a forward',
+      'Save the proof the same night: GPS data, photos, statements, and inform the insurer',
     ],
   },
   {
-    tab: 'SLA & Billing',
+    tab: 'Billing',
     n: '05',
     title: 'Counting What You Are Billed For',
-    spine: 'What you cannot measure, the vendor will price.',
+    spine: 'What you do not measure, the vendor will decide for you.',
     bullets: [
-      'Define the trip before counting trips: dead mileage, waiting time, cancellations',
-      'No-show as a safety signal — a route people stopped trusting, not just a billing line',
-      'On-time truth: measure against the tracker nobody can type into',
-      'The three-way match — roster to tracker to invoice — sampled deeply, not ticked widely',
+      'Agree in writing what one trip means before you start counting trips',
+      'No-show is a warning sign about the route, not only a line on the bill',
+      'Check on-time claims against GPS, not against what the driver typed in the app',
+      'Every month, match a few trips end to end: roster, GPS and invoice',
     ],
   },
   {
-    tab: 'Self-Audit',
+    tab: 'Self-Check',
     n: '06',
     title: 'Auditing Your Own Operation',
-    spine: 'Find it before the client’s auditor does.',
+    spine: 'Find the gap yourself, before the client’s auditor finds it for you.',
     bullets: [
-      'Audit to break your process, not to tick it — swap auditors between sites',
-      'The night round: what an hour at the gate at eleven shows that no dashboard will',
-      'The random-date test: rebuild one ordinary night end to end from records alone',
-      'Findings with an owner and a date — and escalating the design on the third repeat',
+      'Check your own process to find gaps, not to tick boxes',
+      'One hour at the gate at 11 pm shows what no report will show',
+      'Pick one old date and rebuild that night fully from your records — in one hour',
+      'Every finding gets a person’s name and a date; a repeated finding goes to your boss',
     ],
   },
 ];
@@ -84,7 +84,7 @@ export default function TxeCourseTabs() {
   return (
     <div className="mt-14">
       {/* Tab bar */}
-      <div className="flex gap-2 overflow-x-auto pb-2 sm:flex-wrap sm:justify-center" role="tablist" aria-label="Transport Executive courses">
+      <div className="flex gap-2 overflow-x-auto pb-2 sm:flex-wrap sm:justify-center" role="tablist" aria-label="Transport Executive modules">
         {COURSES.map((x, i) => (
           <button
             key={x.n}
@@ -121,7 +121,7 @@ export default function TxeCourseTabs() {
             ))}
           </ul>
           <div className="mt-8 flex flex-wrap gap-2">
-            {['Interactive story lesson', 'Scored decisions', 'English · తెలుగు · हिंदी', 'Voice narrated'].map((chip) => (
+            {['Short lessons with marks', 'English · తెలుగు · हिंदी', 'Voice reads it out', '₹499 per module'].map((chip) => (
               <span key={chip} className="rounded-full bg-navy-50 px-4 py-1.5 text-xs font-semibold text-navy-700">
                 {chip}
               </span>

@@ -111,9 +111,9 @@ export default function HomePage() {
       {/* Campaign strip */}
       <Link
         href="/transport-executive"
-        className="block bg-gold-500 px-4 py-2.5 text-center text-sm font-bold text-navy-900 transition-colors hover:bg-gold-600"
+        className="block bg-gold-500 px-4 py-3 text-center text-sm font-bold text-navy-900 transition-colors hover:bg-gold-600 sm:text-base"
       >
-        NEW — Transport Executive programme · 6 courses · access from ₹199 per learner/month →
+        NEW — Transport Executive Training · 6 modules · ₹499 per module →
       </Link>
 
       {/* Hero */}

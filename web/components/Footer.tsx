@@ -77,7 +77,8 @@ export default function Footer() {
       <div className="border-t border-navy-800">
         <div className="container-max flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
           <p className="text-xs text-navy-400">
-            &copy; {new Date().getFullYear()} D Advaya FM Pvt Ltd. All rights reserved.
+            &copy; {new Date().getFullYear()} D Advaya FM Pvt Ltd. All rights reserved. All training
+            content is the copyright of D Advaya FM Private Limited &bull; Patent applied for.
           </p>
           <p className="text-xs text-navy-500">
             Innovating FM Education &bull; Hyderabad, India
