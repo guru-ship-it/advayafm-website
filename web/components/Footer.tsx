@@ -31,7 +31,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="mb-4 flex items-center gap-3">
-              <Image src="/logos/advaya-fm.png" alt="Advaya FM" width={44} height={44} className="rounded-full bg-white p-1" />
+              <Image src="/logos/advaya-fm.png" alt="D Advaya FM" width={44} height={44} className="rounded-full bg-white p-1" />
               <Image src="/logos/fm-naipunya.jpg" alt="FM NaipuNya" width={44} height={44} className="rounded-full bg-white p-1" />
             </div>
             <h3 className="mb-2 font-display text-xl font-bold">

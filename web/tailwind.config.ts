@@ -8,7 +8,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Advaya FM Enterprise Palette
+        // D Advaya FM Enterprise Palette
         navy: {
           50:  '#F1F5F9',
           100: '#E2E8F0',

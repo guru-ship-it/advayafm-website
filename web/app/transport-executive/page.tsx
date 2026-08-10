@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import TxeCourseTabs from '../../components/TxeCourseTabs';
 
 export const metadata: Metadata = {
-  title: 'Transport Executive Training — ₹499 per module | Advaya naipuNya',
+  title: 'Transport Executive Training — ₹499 per module | D Advaya naipuNya',
   description:
     'Six short courses for the people who run staff cabs and employee transport — rosters, routes, night shift rules, accidents, billing and checks. On WhatsApp, in English, Telugu and Hindi. ₹499 per module.',
 };

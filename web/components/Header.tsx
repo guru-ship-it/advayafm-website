@@ -24,7 +24,7 @@ export default function Header() {
           <div className="flex h-12 w-12 items-center justify-center">
             <Image
               src="/logos/advaya-fm.png"
-              alt="Advaya FM"
+              alt="D Advaya FM"
               width={48}
               height={48}
               className="h-full w-full object-contain"

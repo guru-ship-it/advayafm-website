@@ -19,7 +19,7 @@ export default function AboutPage() {
               Innovating FM Education for a <span className="text-gold-400">Rising India</span>
             </h1>
             <p className="text-xl leading-relaxed text-navy-200">
-              Advaya, Sanskrit for &lsquo;unique&rsquo;, is an educational technology company
+              D Advaya, named from the Sanskrit word for &lsquo;unique&rsquo;, is an educational technology company
               revolutionizing training and certification for India&apos;s most vital industries.
             </p>
           </div>
