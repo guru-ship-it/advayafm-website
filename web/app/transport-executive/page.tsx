@@ -108,10 +108,10 @@ export default function TransportExecutivePage() {
             ))}
           </div>
           <p className="mx-auto mt-12 max-w-3xl text-center text-sm leading-relaxed text-navy-500">
-            Courses are prepared with reference to the Logistics Sector Skill Council qualification
-            for Land Transportation Supervisor (NSQF Level 5), the Motor Vehicles Act 1988 and the
-            State rules for women working night shifts. This is awareness training — your company
-            rules and client contracts always apply.
+            Courses are prepared as per Skill Council guidelines, the Motor Vehicles Act 1988 and
+            the State rules for women working night shifts. Copyrighted and patent-pending content,
+            prepared for the Employee Transport Services (ETS) industry by subject matter experts.
+            This is awareness training — your company rules and client contracts always apply.
           </p>
         </div>
       </section>
