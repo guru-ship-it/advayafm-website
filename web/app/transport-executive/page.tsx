@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import TxeCourseTabs from '../../components/TxeCourseTabs';
+import RazorpayCheckout from '../../components/RazorpayCheckout';
 
 export const metadata: Metadata = {
   title: 'Transport Executive Training — ₹499 per module | D Advaya naipuNya',
@@ -56,9 +57,15 @@ export default function TransportExecutivePage() {
             </div>
 
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+              <RazorpayCheckout
+                amountPaise={49900}
+                label="Buy a Module Online · ₹499"
+                description="Transport Executive Training - one module"
+                className="btn-gold px-8 py-4 text-lg"
+              />
               <a
                 href={WA_LINK}
-                className="btn-gold px-8 py-4 text-lg"
+                className="btn-outline border-navy-600 bg-transparent px-8 py-4 text-lg text-white hover:border-gold-400 hover:bg-navy-800/50"
                 target="_blank"
                 rel="noopener noreferrer"
               >
